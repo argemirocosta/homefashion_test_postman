@@ -1,0 +1,1637 @@
+{
+	"info": {
+		"_postman_id": "095c42c0-df55-4a27-b57d-a90bbf41596e",
+		"name": "Home Fashion - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente no ar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1977a438-3b43-4415-985d-1a6dbf14eb1c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 50ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Servidor no ar\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/servidor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"servidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Listar todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5f35d34a-3b78-4883-844a-e778a88abcd3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 70ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(70);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"FELIPE\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente?page=0&size=200&sort=id,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "200"
+						},
+						{
+							"key": "sort",
+							"value": "id,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Listar por Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 120ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(120);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"JPA Teste 1\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/241",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"241"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Listar por usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 50ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(50);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ALESSANDRA\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/usuario/155",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"usuario",
+						"155"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Listar por nome usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 120ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(120);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TESTE\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cliente/usuario/nome/ARGEMIRO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"usuario",
+						"nome",
+						"ARGEMIRO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Salvar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f90c8eec-f810-43b4-90a2-665a62915907",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});",
+							"pm.test(\"Response time is less than 450ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(450);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senha2",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"TESTE 105\",\n\t\"cpf\": \"07725791485\",\n\t\"usuario\": {\n\t\t\"id\": 155\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Alterar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "122d14f9-8a1c-4eb9-a4e7-675e3a04107b",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"pm.test(\"Response time is less than 450ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(450);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"JPA Teste 160\",\n\t\"cpf\": \"07725791485\",\n\t\"telefone1\": 12345678,\n\t\"usuario\": {\n\t\t\"id\": 155\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/233",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cliente - Deletar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "043f4ab3-1b75-4e2f-b54b-c59f12d13486",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente/282",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente",
+						"282"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario no ar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "59ea1561-4caa-4d01-bc04-a920847fc8d1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 20ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(20);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Servidor no ar\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/servidor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"servidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Listar todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc54dfe8-1971-46b4-850e-cb3ceac23c2e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 10ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"ENZO\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Listar por Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 30ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(30);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TESTEUSER\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/usuarios/155",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"155"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Salvar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1462d9e1-e0ce-4acc-b889-90d5f434e2da",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senha2",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Teste API 03\",\n\t\"login\": \"testeapi03\",\n\t\"senha\": \"1\",\n\t\"ativo\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Alterar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f5867ba7-a37b-4d3c-8db0-1d73060ae6b4",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Teste API 03\",\n    \"login\": \"testeapi05\",\n    \"senha\": \"2\",\n    \"ativo\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/158",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"158"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuarios - Deletar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d02995c-375d-4dd6-9ddc-508e5419530b",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/usuarios/158",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"158"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda no ar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "25a10420-0811-4d83-8760-b8e08278c7cb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 30ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(30);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Servidor no ar\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/venda/servidor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"venda",
+						"servidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - Listar todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e08123c-d35e-4429-8cbd-b38126cf5bcf",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 140ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(140);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"MONISY\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/venda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - Listar por Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TESTEUSER\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/venda/374",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"venda",
+						"374"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - Listar por usuario",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"TESTEUSER\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/venda/usuario/155",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"venda",
+						"usuario",
+						"155"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - Salvar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d6cf8c82-504a-48a6-b8ad-511641dcf340",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senha2",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idCliente\": 234,\n\t\"valor\": 105.50,\n\t\"qtd\": 2,\n\t\"data\": \"01/01/2020\",\n\t\"idUsuario\": 155,\n\t\"cancelada\": \"false\",\n\t\"dataHoraCancelamento\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/venda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"venda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Venda - Cancelar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "03620cd6-6ba1-4a7d-9865-6718716770e4",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/venda/cancela/374",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"venda",
+						"cancela",
+						"374"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento no ar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9c88d885-cc10-454e-a866-a7ba7becd24b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 30ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(30);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Servidor no ar\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagamento/servidor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento",
+						"servidor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento - Listar todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8acbc2f6-592e-4770-b5de-b3ad3857479f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"MONISY\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento - Listar por Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 70ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(70);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"MONISY\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagamento/374",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento",
+						"374"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento - Listar por cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 70ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(70);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"MONISY\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagamento/cliente/79",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento",
+						"cliente",
+						"79"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento - Listar por venda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a09fb60-9485-42e4-8a0b-02d115320344",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 70ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(70);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"MONISY\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/pagamento/venda/167",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento",
+						"venda",
+						"167"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento - Salvar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ec811b83-cfd3-4526-8d19-40942f479ef6",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,202]);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"Created\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senha2",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "usuario2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idVenda\": 374,\n\t\"valorPago\": 50,\n\t\"dataPagamento\": \"10/01/2020\",\n\t\"idUsuario\": \"155\",\n\t\"cancelada\": \"false\",\n\t\"dataHoraCancelamento\": null\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/pagamento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagamento - Cancelar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a63e4f6-4b1b-4c5f-8395-f9d4ca6fc7fd",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"No Content\");",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "usuario1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "senha1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/pagamento/cancela/759",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamento",
+						"cancela",
+						"759"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
